@@ -1,7 +1,11 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
     
-	<changeSet author="Daniane (generated)" id="1622655100623-1">
+    <!-- 
+    Changelogs represent the migrations and the order they are applied is from top to bottom.
+    Ids are merely identifiers and don't affect the order.
+     -->
+	<changeSet author="Daniane (generated)" id="1">
         <createTable tableName="person">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints nullable="false" primaryKey="true"/>
@@ -11,11 +15,18 @@
         </createTable>
     </changeSet>
     
-    <changeSet author="Daniane (generated)" id="1622655100623-2">
+	<changeSet author="Daniane (generated)" id="2">
         <addColumn catalogName="demo_liquibase" schemaName= "public" tableName="person" >
-			<column name="hobbies" type="text"/>  
+			<column name="hobbies" type="number"/>  
 		</addColumn>  
     </changeSet>
-    
 
+    <changeSet author="Daniane (generated)" id="-1">
+       <modifyDataType  catalogName="demo_liquibase"  
+            columnName="hobbies"  
+            newDataType="text"  
+            schemaName="public"  
+            tableName="person"/>   
+    </changeSet>
+    
 </databaseChangeLog>
