@@ -14,19 +14,11 @@
             <column name="powers" type="VARCHAR(100)"/>           
         </createTable>
     </changeSet>
-    
+
 	<changeSet author="Daniane (generated)" id="2">
         <addColumn catalogName="demo_liquibase" schemaName= "public" tableName="person" >
 			<column name="hobbies" type="number"/>  
 		</addColumn>  
     </changeSet>
-
-    <changeSet author="Daniane (generated)" id="-1">
-       <modifyDataType  catalogName="demo_liquibase"  
-            columnName="hobbies"  
-            newDataType="text"  
-            schemaName="public"  
-            tableName="person"/>   
-    </changeSet>
-    
+       
 </databaseChangeLog>
